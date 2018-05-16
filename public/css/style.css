@@ -98,7 +98,7 @@ p  {
 
 .switch input {display:none;}
 
-.slider {
+.slider{
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -110,7 +110,7 @@ p  {
   transition: .4s;
 }
 
-.slider:before {
+.slider:before  {
   position: absolute;
   content: "";
   height: 26px;
