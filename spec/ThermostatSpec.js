@@ -62,4 +62,26 @@ describe("power saving mode", function(){
   });
 });
 
+describe("reset", function(){
+  it("should reset the temperature to default (20)", function(){
+    thermostat.reset();
+    expect(thermostat.temperature).toEqual(DEFAULTTEMP);
+  });
+});
+
+describe("energy usage", function(){
+  it("should return the current energy usage", function(){
+    expect(thermostat.energyUsage()).toEqual('medium-usage');
+  });
+  it("should return low-usage if temp less than 18", function(){
+    for(i=1; i<=3; i++){ thermostat.down(); };
+    expect(thermostat.energyUsage()).toEqual('low-usage');
+  });
+  it("should return high-usage if temp is greater than 25", function(){
+    thermostat.powerSavingOff();
+    for(i=1; i<=6; i++){ thermostat.up(); };
+    expect(thermostat.energyUsage()).toEqual('high-usage');
+  });
+});
+
 });

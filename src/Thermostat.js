@@ -28,6 +28,20 @@ Thermostat.prototype.powerSavingOff = function() {
   this.powerSaving = false;
 }
 
+Thermostat.prototype.reset = function() {
+  this.temperature = DEFAULTTEMP;
+}
+
+Thermostat.prototype.energyUsage = function() {
+  if (this.temperature < 18) {
+    return 'low-usage';
+  } else if (this.temperature < 25) {
+    return 'medium-usage';
+  } else {
+    return 'high-usage';
+  }
+}
+
 Thermostat.prototype._isMaxTemp = function(){
   return (this.powerSaving === true && this.temperature >= MAXIMUM_PS) ||
   (this.temperature >= MAXIMUM);
