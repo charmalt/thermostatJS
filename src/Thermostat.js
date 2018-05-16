@@ -11,9 +11,9 @@ function Thermostat() {
 }
 
 Thermostat.prototype.up = function() {
-  // if (this._isMaxTemp) {
-  //   throw new Error("Maximum Temperature!");
-  // };
+  if (this._isMaxTemp()) {
+    throw new Error("Maximum Temperature!");
+  };
   this.temperature += INCREASE;
 }
 
@@ -29,6 +29,6 @@ Thermostat.prototype.powerSavingOff = function() {
 }
 
 Thermostat.prototype._isMaxTemp = function(){
-  // (this.powerSaving === true && this.temperature >= MAXIMUM_PS) ||
+  return (this.powerSaving === true && this.temperature >= MAXIMUM_PS) ||
   (this.temperature >= MAXIMUM);
 }

@@ -29,6 +29,7 @@ describe("up", function() {
 
   describe("power saving off", function(){
     it("should raise error if above maximum temperature (32)", function(){
+      thermostat.powerSavingOff();
       for (i=1; i<=12; i++){ thermostat.up(); };
       expect(function(){
         thermostat.up();
@@ -58,14 +59,6 @@ describe("power saving mode", function(){
   it("can be turned off", function(){
     thermostat.powerSavingOff();
     expect(thermostat.powerSaving).toEqual(false);
-  });
-});
-
-describe("isMaxTemp", function(){
-  it("should return true if powerSaving is off and max temp exceeded (32))", function(){
-    thermostat.powerSavingOff();
-    for(i=1; i<=12; i++){ thermostat.up(); };
-    expect(thermostat._isMaxTemp()).toBeTruthy();
   });
 });
 
