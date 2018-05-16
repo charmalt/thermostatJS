@@ -26,7 +26,16 @@ describe("up", function() {
       }).toThrowError('Maximum Temperature!');
     });
   });
-  
+
+  describe("power saving off", function(){
+    it("should raise error if above maximum temperature (32)", function(){
+      for (i=1; i<=12; i++){ thermostat.up(); };
+      expect(function(){
+        thermostat.up();
+      }).toThrowError('Maximum Temperature!');
+    });
+  });
+
 });
 
 describe("down", function() {
@@ -46,7 +55,18 @@ describe("power saving mode", function(){
   it("should be on by default", function(){
     expect(thermostat.powerSaving).toEqual(true);
   });
+  it("can be turned off", function(){
+    thermostat.powerSavingOff();
+    expect(thermostat.powerSaving).toEqual(false);
+  });
 });
 
+describe("isMaxTemp", function(){
+  it("should return true if powerSaving is off and max temp exceeded (32))", function(){
+    thermostat.powerSavingOff();
+    for(i=1; i<=12; i++){ thermostat.up(); };
+    expect(thermostat._isMaxTemp()).toBeTruthy();
+  });
+});
 
 });
