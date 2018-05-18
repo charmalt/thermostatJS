@@ -3,38 +3,57 @@
   <head>
     <link rel="stylesheet" type="text/css" href="./public/css/titanic_style.css">
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
     <script src="src/Thermostat.js"></script>
     <script src="thermostatFunctions.js"></script>
   </head>
+
 <body>
 
-<div class='container'>
-
-  <h2 class ="temperature"></h2>
-  <h2 class ="errormessages">Everything is working fine!</h2>
+<div class = 'left'>
 
   <div>
-    <button class = "up" type ="button">Up!</button>
-    <button class = "down" type ="button">Down!</button>
-    <button class = "reset" type ="button">Reset</button>
+    <form id='city-form'>
+      <input id='city' type='text' name='city'>
+      <input type='submit' value='submit'>
+    </form>
+
+    <div id='city-name'></div>
+    <div id='city-temperature'></div>
   </div>
 
+  <div>
+    <b>Power Saving Mode</b>
 
-  <b>Power Saving Mode</b>
+    <label  class ="switch">
+      <input id="sw" type = "checkbox">
+      <span class="slider round"></span>
+    </label>
+  </div>
 
-  <label  class ="switch">
-    <input id="sw" type = "checkbox">
-    <span class="slider round"></span>
-  </label>
+</div>
 
-  <form id='city-form'>
-    <input id='city' type='text' name='city'>
-    <input type='submit' value='submit'>
-  </form>
+<div class='middle'>
 
-  <div id='city-temperature'></div>
 
-  <h1 class='title'>Thermostat</h1>
+  <h2 class ="errormessages">Jack is safe.</h2>
+  <div class = "temp">
+    <h2 class ="temperature"></h2>
+    <h2> &#8451; </h2>
+  </div>
+
+  <h1 class='title'>THERMOSTAT</h1>
+
+
+</div>
+
+<div class = 'right'>
+
+
+  <button class = "up" type ="button">Up!</button>
+  <button class = "down" type ="button">Down!</button>
+  <button class = "reset" type ="button">Reset</button>
+
 
 </div>
 </body>
