@@ -21,8 +21,17 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content:space-around;
+  font-size: 25px;
+}
 
+.form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.citytemp{
+  display: flex;
 }
 
 .right{
@@ -91,4 +100,26 @@ button {
   font-size: 40px;
   text-shadow: 1px 1px 4px black;
   border-radius: 10%;
+}
+
+.submit{
+  height:50px;
+  width:105px;
+  background-color: #f4a142;
+  font-family: 'Cinzel', serif;
+  color: black;
+  border: 1px solid #f4a142;
+  font-size: 20px;
+  text-shadow: 1px 1px 4px black;
+  border-radius: 10%;
+}
+
+#city{
+  height:25px;
+  width:100px;
+  margin-bottom: 20px;
+  text-align: center;
+  background-color: #f4a142;
+  font-family: 'Cinzel', serif;
+
 }

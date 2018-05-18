@@ -7,7 +7,7 @@ $(document).ready(function(){
     var cityName = $('#city').val();
     $("#city-name").text(cityName);
     $.get('http://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&units=metric&APPID=06d5aa42080a1c3d436218f627f29502', function (response){
-      $("#city-temperature").text(response.main.temp);
+      $("#city-temperature").html(response.main.temp + '&#8451;');
     });
 
   });
