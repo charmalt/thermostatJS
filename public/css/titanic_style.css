@@ -1,0 +1,13 @@
+body {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  color: white;
+}
+.container {
+  width: 770px;
+  height: 850px;
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-image: url('https://dynamicmedia.zuza.com/zz/m/original_/7/5/7572ce24-610e-40ce-bfef-ca4279a78d10/B821574982Z.1_20140403071627_000_G6J17B5DF.2_Gallery.jpg')
+}

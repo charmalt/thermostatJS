@@ -1,57 +1,41 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="./public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./public/css/titanic_style.css">
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="src/Thermostat.js"></script>
     <script src="thermostatFunctions.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Thermostat</title>
   </head>
 <body>
 
-<center>
-<h1> A Thermostat. </h1>
-</center>
+<div class='container'>
 
-<br>
-<div class="container">
-  <div class="alert alert-danger alert-dismissible">
-    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-    <strong>Danger!</strong> This alert box could indicate a dangerous or potentially negative action.
+  <h2 class ="temperature"></h2>
+  <h2 class ="errormessages">Everything is working fine!</h2>
+
+  <div>
+    <button class = "up" type ="button">Up!</button>
+    <button class = "down" type ="button">Down!</button>
+    <button class = "reset" type ="button">Reset</button>
   </div>
+
+
+  <b>Power Saving Mode</b>
+
+  <label  class ="switch">
+    <input id="sw" type = "checkbox">
+    <span class="slider round"></span>
+  </label>
+
+  <form id='city-form'>
+    <input id='city' type='text' name='city'>
+    <input type='submit' value='submit'>
+  </form>
+
+  <div id='city-temperature'></div>
+
+  <h1 class='title'>Thermostat</h1>
+
 </div>
-
-<h2 class ="temperature"></h2>
-<h2 class ="errormessages">Everything is working fine!</h2>
-
-<center>
-<button class = "up" type ="button">Up!</button>
-<button class = "down" type ="button">Down!</button>
-<button class = "reset" type ="button">Reset</button>
-</center>
-
-<br>
-<br>
-<b>Power Saving Mode</b>
-<label  class ="switch">
-  <input id="sw" type = "checkbox">
-  <span class="slider round"></span>
-</label>
-
-<div class="meter">
-  <span style="width: 25%"></span>
-</div>
-
-<form id='city-form'>
-  <input id='city' type='text' name='city'>
-  <input type='submit' value='submit'>
-</form>
-<div id='city-temperature'></div>
-
-
 </body>
 </html>
