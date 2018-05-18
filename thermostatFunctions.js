@@ -2,13 +2,14 @@ $(document).ready(function(){
   thermostat = new Thermostat();
   var temperature = thermostat.temperature;
 
-  var weatherResponse = $.get('http://api.openweathermap.org/data/2.5/weather?q=London&units=metric&APPID=06d5aa42080a1c3d436218f627f29502', function (response){
-      console.log(response.main.temp);
+  $('#city-form').submit(function(){
+    event.preventDefault();
+    var cityName = $('#city').val();
+    $.get('http://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&units=metric&APPID=06d5aa42080a1c3d436218f627f29502', function (response){
+      $("#city-temperature").text(response.main.temp);
     });
 
-  // console.log(weatherResponse);
-  console.log(weatherResponse.responseJSON.main.temp);
-
+  });
 
   $(".up").click(function(){
     $(".errormessages").text('Everything is working fine!');
