@@ -14,11 +14,13 @@ $(document).ready(function(){
 
   $(".up").click(function(){
     $(".errormessages").text('Jack is safe.');
+    $("#GIF").attr('class', '');
     try {
       thermostat.up();
     }
     catch (error) {
       $(".errormessages").text('It\'s getting hot in here.');
+      $("#GIF").attr('class', 'GIF-hot');
     }
     var temperature = thermostat.temperature;
     $(".temperature").text(temperature);
@@ -26,11 +28,13 @@ $(document).ready(function(){
 
   $(".down").click(function(){
     $(".errormessages").text('Jack is safe.');
+    $("#GIF").attr('class', '');
     try {
       thermostat.down();
     }
     catch (error) {
       $(".errormessages").text('Jack is frozen.');
+      $("#GIF").attr('class', 'GIF-frozen');
     }
     var temperature = thermostat.temperature;
     $(".temperature").text(temperature);
@@ -38,6 +42,7 @@ $(document).ready(function(){
 
   $(".reset").click(function(){
     $(".errormessages").text('Jack is safe.');
+    $("#GIF").attr('class', '');
     thermostat.reset();
     var temperature = thermostat.temperature;
   $(".temperature").text(temperature);
@@ -53,4 +58,6 @@ $(document).ready(function(){
   $(".temperature").text(temperature);
 
   $("#sw").prop('checked', true);
+
+
 });
